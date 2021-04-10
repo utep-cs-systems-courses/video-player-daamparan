@@ -34,8 +34,7 @@ def convertToGrayScale(extractionFrames, conversionFrames):
         if frame == 'end':
             #if we see the mark
             break #exit the loop
-        elif frame is None:
-            print('Frame: ', count, ' is empty')
+
         greyFrame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY ) #frame to grey
         conversionFrames.put(greyFrame) #put in the queue
         count += 1 #increment
@@ -49,8 +48,8 @@ def displayFrames(inputBuf):
         frame = inputBuf.get() #get a frame
         if frame == 'end':
             break #end the while
-        print('Displaying frame: ', count)
 
+        print('Displaying frame: ', count)
         cv2.imshow('Video', frame) #show the frame image
         if cv2.waitKey(42) and 0xFF == ord('q'): #wait for 42 ms
             break
