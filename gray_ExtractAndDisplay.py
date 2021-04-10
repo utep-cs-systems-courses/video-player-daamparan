@@ -37,7 +37,7 @@ def convertToGrayScale(extractionFrames, conversionFrames):
         elif frame is None:
             print('Frame: ', count, ' is empty')
         greyFrame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY ) #frame to grey
-        conversionFrames.put(frame) #put in the queue
+        conversionFrames.put(greyFrame) #put in the queue
         count += 1 #increment
 
     print('Frame Conversion complete')
